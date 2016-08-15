@@ -22,7 +22,7 @@
     </div>
      <div class="head">
      <img src="http://arjunsawhney.io/CraftVR.png" class="imgcenter img-responsive">
-     <img src="play.png" class="icocenter img-responsive" >
+     <a href = "demo.html"><img src="play.png" class="icocenter img-responsive" ></a>
        <div class="fullscreen-bg">
     <video loop muted autoplay poster="back.jpg" class="fullscreen-bg__video">
         <source src="Volcano.mp4" type="video/mp4">
@@ -132,12 +132,12 @@
       <script src="js1/classie.js"></script>
     <script src="js1/phoneSlideshow.js"></script>
     <script type="text/javascript">
-          $(document).ready(function(){       
+          $(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('#startchange');
    var offset = startchange.offset();
     if (startchange.length){
-   $(document).scroll(function() { 
+   $(document).scroll(function() {
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
           $(".nav").css('display', 'block')
