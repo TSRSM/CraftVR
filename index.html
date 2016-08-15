@@ -2,7 +2,7 @@
 <!DOCTYPE html>
   <html>
   <head>
-    <title>CraftVR - Share Your Imagination</title>
+    <title>CraftVR</title>
     <link rel="stylesheet" href="craftvr.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900">
@@ -13,6 +13,77 @@
     <link rel="stylesheet" type="text/css" href="css1/component.css" />
     <script src="js/modernizr.custom.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <style>@-webkit-keyframes sheen {
+  0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+@keyframes sheen {
+  0% {
+    -webkit-transform: skewY(-45deg) translateX(0);
+            transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    -webkit-transform: skewY(-45deg) translateX(12.5em);
+            transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+.wrapper {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.button {
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: #2194E0;
+  border: 2px solid #2194E0;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  -webkit-transform: skewX(-45deg) translateX(0);
+          transform: skewX(-45deg) translateX(0);
+  -webkit-transition: none;
+  transition: none;
+}
+.button:hover {
+  background-color: #2194E0;
+  color: #fff;
+  border-bottom: 4px solid #1977b5;
+}
+.button:hover:before {
+  -webkit-transform: skewX(-45deg) translateX(13.5em);
+          transform: skewX(-45deg) translateX(13.5em);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+    </style>
   </head>
   <body>
    <div id="myNav" class="overlay">
@@ -30,9 +101,12 @@
      <div class="head" >
      <div class="container-fluid">
      <img src="logo.png" class="imgcenter img-responsive">
-      <h1  class="headh1">IMAGINE.DESIGN.CRAFT</h1>
-    
- <img src="play.png" class="icocenter img-responsive" onclick="openNav()" >
+      <!--<h1  class="headh1" style="margin-top:-30px;"><b>IMAGINE. DESIGN. CRAFT</b></h1>-->
+
+
+ <div class="wrapper" style="padding-top:70px">
+  <a href="#" class="button"  class="icocenter img-responsive" onclick="openNav()">Video</a>
+</div>
        <div class="fullscreen-bg">
     <video loop muted autoplay poster="back.jpg" class="fullscreen-bg__video">
         <source src="video.mp4" type="video/mp4">
@@ -41,16 +115,17 @@
 </div>
      </div>
      <div class="headmob" style="display: none;">
-     <img src="logo.png" class="imgcenter img-responsive">
-      <h1  class="headh1">IMAGINE.DESIGN.CRAFT</h1>
-     <img src="play.png" class="icocenter img-responsive" id="play" >
+     <center><img src="logo.png" class="" style="float:center"width="300px" height = "auto"></center>
+     <div class="wrapper" style="padding-top:100px">
+      <a href="#" class="button"  class="icocenter img-responsive" onclick="openNav()">Video</a>
+     </div>
        <div class="fullscreen-bg">
 </div>
      </div>
       <div class = "intro" id="startchange">
         <div class = "container">
-          <h1>WHAT IS CRAFTVR?</h1>
-          <p>CraftVR is your one stop shop for prototyping, creating, visualizing and designing anything 3D in Virtual Reality. 
+          <h1 style="margin-top:40px">WHAT IS CRAFTVR?</h1>
+          <p>CraftVR is your one stop shop for prototyping, creating, visualizing and designing anything 3D in Virtual Reality.
 
 CraftVR allows you to craft your own virtual reality experiences. Our desktop software is built from the ground up to create and view 3D structures using our premium tool kit inside Virtual Reality. Design and view buildings, houses, cars, product blueprints in VR and import Revit, SketchUp, Rhino and OBJ files and work on top of them. Our advanced software enables you to build anything in your endless virtual environment, where your creativity is untethered from the limits of reality. CraftVR empowers you to share, and work upon your imagination and creativity with others easily and quickly using our collaboration functionality.
 
@@ -61,7 +136,7 @@ Our desktop software runs on Steam and is supported on leading VR headsets as th
         <div class = "container">
           <h1>DEMO</h1>
           <p >Take a tour of our Virtual Reality Room and interact with the objects. Compatible with Google Cardboard.</p>
-          <a href="#" target="_blank" class="Button">LEARN MORE</a>
+          <div  style="margin-top:30px;"><a href="#" target="_blank" class="Button">LEARN MORE</a></div>
         </div>
       </div>
 
@@ -164,12 +239,12 @@ Our desktop software runs on Steam and is supported on leading VR headsets as th
       <script src="js1/classie.js"></script>
     <script src="js1/phoneSlideshow.js"></script>
     <script type="text/javascript">
-          $(document).ready(function(){       
+          $(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('#startchange');
    var offset = startchange.offset();
     if (startchange.length){
-   $(document).scroll(function() { 
+   $(document).scroll(function() {
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
           $(".nav").css('display', 'block')
@@ -179,7 +254,7 @@ Our desktop software runs on Steam and is supported on leading VR headsets as th
    });
     }
 });
-          
+
 </script>
 
   <script>
