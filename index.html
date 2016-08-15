@@ -15,29 +15,53 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
+   <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <iframe width="90%" height="500px" src="https://www.youtube.com/embed/6L6XqWoS8tw" frameborder="0" allowfullscreen ></iframe>
+      </div>
+    </div>
+
     <div class="nav">
       <div class="container">
         <a href="http://arjunsawhney.io/craftvr.html"><img src="http://arjunsawhney.io/CraftVR.png"></a>
       </div>
     </div>
-     <div class="head">
+     <div class="head" >
+     <div class="container-fluid">
      <img src="logo.png" class="imgcenter img-responsive">
-     <img src="play.png" class="icocenter img-responsive" >
+      <h1  class="headh1">IMAGINE.DESIGN.CRAFT</h1>
+    
+ <img src="play.png" class="icocenter img-responsive" onclick="openNav()" >
        <div class="fullscreen-bg">
     <video loop muted autoplay poster="back.jpg" class="fullscreen-bg__video">
-        <source src="Volcano.mp4" type="video/mp4">
+        <source src="video.mp4" type="video/mp4">
     </video>
-
+</div>
+</div>
+     </div>
+     <div class="headmob" style="display: none;">
+     <img src="logo.png" class="imgcenter img-responsive">
+      <h1  class="headh1">IMAGINE.DESIGN.CRAFT</h1>
+     <img src="play.png" class="icocenter img-responsive" id="play" >
+       <div class="fullscreen-bg">
 </div>
      </div>
       <div class = "intro" id="startchange">
         <div class = "container">
-          <h1>WHAT IS CRAFT<b>VR</b>?</h1>
+          <h1>WHAT IS CRAFTVR?</h1>
+          <p>CraftVR is your one stop shop for prototyping, creating, visualizing and designing anything 3D in Virtual Reality. 
+
+CraftVR allows you to craft your own virtual reality experiences. Our desktop software is built from the ground up to create and view 3D structures using our premium tool kit inside Virtual Reality. Design and view buildings, houses, cars, product blueprints in VR and import Revit, SketchUp, Rhino and OBJ files and work on top of them. Our advanced software enables you to build anything in your endless virtual environment, where your creativity is untethered from the limits of reality. CraftVR empowers you to share, and work upon your imagination and creativity with others easily and quickly using our collaboration functionality.
+
+Our desktop software runs on Steam and is supported on leading VR headsets as the Oculus Rift and HTC Vive.</p>
         </div>
       </div>
       <div class="demo">
         <div class = "container">
           <h1>DEMO</h1>
+          <p >Take a tour of our Virtual Reality Room and interact with the objects. Compatible with Google Cardboard.</p>
+          <a href="#" target="_blank" class="Button">LEARN MORE</a>
         </div>
       </div>
 
@@ -49,34 +73,42 @@
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-pen.png">
             <h1>Annotations</h1>
+            <p>With the HTC Vive or Oculus Touch enabled, you will be able to draw in space by moving your hands, allowing effective markups in your model.</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-timer.png">
             <h1>Instant Conversion</h1>
+            <p>Your 3D files will be converted into a VR experience in less time than it takes to say "CraftVR"</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-scale.png">
             <h1>Scale Model Mode</h1>
+            <p> The ability to begin a walkthrough, scale and rotate your model.</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-controls.png">
             <h1>Game Pad Support</h1>
+            <p> Use an Xbox controller, gamepad controller, or mouse and keyboard to navigate the scene. The thumb sticks allow forwards movement and turning while the buttons enable the menu</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-height.png">
             <h1>Accurate Height and Scale</h1>
+            <p>An accurate, true to scale experience that allows the user to fully understand a space.</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-sun.png">
             <h1>Sun Position</h1>
+            <p>Experience lighting and shadows throughout the day in real time or change the lighting as you wish to see your product in different lighting conditions</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-layer.png">
             <h1>Layers</h1>
+            <p>Toggle between different design options by choosing to view different layers of your design</p>
           </div>
           <div class = "col-md-3">
             <img src="http://arjunsawhney.io/feature-teleport.png">
             <h1>Easy Navigation</h1>
+            <p> CraftVR uses a cursor to explore your VR environment. Use it to move around to different places in the model.</p>
           </div>
         </div>
       </div>
@@ -147,6 +179,17 @@
    });
     }
 });
+          
+</script>
+
+  <script>
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
 </script>
     </body>
     </html>
