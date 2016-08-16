@@ -1,275 +1,230 @@
 
 <!DOCTYPE html>
-  <html>
-  <head>
-    <title>CraftVR</title>
-    <link rel="stylesheet" href="craftvr.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1">
-    <link rel="stylesheet" type="text/css" href="css1/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css1/component.css" />
-    <script src="js/modernizr.custom.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
-    <style>@-webkit-keyframes sheen {
-  0% {
-    -webkit-transform: skewY(-45deg) translateX(0);
-            transform: skewY(-45deg) translateX(0);
+<html>
+<head>
+  <title>CraftVR</title>
+  <link rel="stylesheet" href="craftvr.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1">
+  <link rel="stylesheet" type="text/css" href="css1/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css1/component.css" />
+  <script src="js/modernizr.custom.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <style>@-webkit-keyframes sheen {
+    0% {
+      -webkit-transform: skewY(-45deg) translateX(0);
+      transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+      -webkit-transform: skewY(-45deg) translateX(12.5em);
+      transform: skewY(-45deg) translateX(12.5em);
+    }
   }
-  100% {
-    -webkit-transform: skewY(-45deg) translateX(12.5em);
-            transform: skewY(-45deg) translateX(12.5em);
+  @keyframes sheen {
+    0% {
+      -webkit-transform: skewY(-45deg) translateX(0);
+      transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+      -webkit-transform: skewY(-45deg) translateX(12.5em);
+      transform: skewY(-45deg) translateX(12.5em);
+    }
   }
-}
-@keyframes sheen {
-  0% {
-    -webkit-transform: skewY(-45deg) translateX(0);
-            transform: skewY(-45deg) translateX(0);
-  }
-  100% {
-    -webkit-transform: skewY(-45deg) translateX(12.5em);
-            transform: skewY(-45deg) translateX(12.5em);
-  }
-}
-.wrapper {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.button {
-  padding: 0.75em 2em;
-  text-align: center;
-  text-decoration: none;
-  color: #2194E0;
-  border: 2px solid #2194E0;
-  font-size: 24px;
-  display: inline-block;
-  border-radius: 0.3em;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-  overflow: hidden;
-}
-.button:before {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  width: 3em;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -4.5em;
-  -webkit-transform: skewX(-45deg) translateX(0);
-          transform: skewX(-45deg) translateX(0);
-  -webkit-transition: none;
-  transition: none;
-}
-.button:hover {
-  background-color: #2194E0;
-  color: #fff;
-  border-bottom: 4px solid #1977b5;
-}
-.button:hover:before {
-  -webkit-transform: skewX(-45deg) translateX(13.5em);
-          transform: skewX(-45deg) translateX(13.5em);
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-    </style>
-  </head>
-  <body>
-
-    <div style="height:105vh;width:100%;background-color:rgba(0,0,0,0.75);z-index:998;position:absolute;">
-      <a href="#" class="button"  class="icocenter img-responsive" style="position:absolute;bottom:30vh;left:0;right:0;margin:auto;width:160px;" onclick="openNav()">Video</a>
-      <img src="logo.png" class="imgcenter img-responsive">
+  </style>
+</head>
+<body>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <iframe src="video.mp4" muted frameborder="0" allowfullscreen></iframe>
     </div>
-
-   <div id="myNav" class="overlay">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlay-content">
-        <iframe width="90%" height="500px" src="https://www.youtube.com/embed/6L6XqWoS8tw" frameborder="0" allowfullscreen ></iframe>
+  </div>
+  <div class="nav">
+    <div class="container">
+      <a href="http://arjunsawhney.io/craftvr.html"><img src="http://arjunsawhney.io/CraftVR.png"></a>
+    </div>
+  </div>
+  <div class="head">
+    <div class="container">
+      <div class="image">
+      <img src="logo.png">
+    </div>
+      <div class="wrapper" style="padding-top:70px">
+        <a href="#" class="Button1" class="icocenter img-responsive" onclick="openNav()">Watch Video</a>
+      </div>
+      <div class = "black">
+        <div class = "container">
+      </div>
+      </div>
+      <div class="fullscreen-bg">
+        <video loop muted autoplay poster="back.jpg" class="fullscreen-bg__video">
+          <source src="video.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
-
-    <div class="nav" style="z-index:99999;">
-      <div class="container">
-        <a href="http://arjunsawhney.io/craftvr.html"><img src="http://arjunsawhney.io/CraftVR.png"></a>
+    <div class="headmob" style="display: none;">
+      <center><img src="logo.png" class="" style="float:center"width="300px" height = "auto"></center>
+      <div class="wrapper" style="padding-top:100px">
+        <a href="#" class="Button1"  class="icocenter img-responsive" onclick="openNav()">Video</a>
+      </div>
+      <div class="fullscreen-bg">
       </div>
     </div>
-     <div class="head" >
-     <div class="container-fluid">
-
-
-      <!--<h1  class="headh1" style="margin-top:-30px;"><b>IMAGINE. DESIGN. CRAFT</b></h1>-->
-
-
-
-       <div class="fullscreen-bg">
-    <video loop muted autoplay poster="back.jpg" class="fullscreen-bg__video">
-        <source src="video.mp4" type="video/mp4">
-    </video>
-</div>
-</div>
-     </div>
-     <div class="headmob" style="display: none;">
-     <div class="wrapper" style="padding-top:100px">
-
-     </div>
-
-       <div class="fullscreen-bg">
-</div>
-     </div>
-      <div class = "intro" id="startchange">
-        <div class = "container">
-          <h1 style="margin-top:40px">WHAT IS CRAFTVR?</h1>
-          <p>CraftVR is your one stop shop for prototyping, creating, visualizing and designing anything 3D in Virtual Reality.
-
-CraftVR allows you to craft your own virtual reality experiences. Our desktop software is built from the ground up to create and view 3D structures using our premium tool kit inside Virtual Reality. Design and view buildings, houses, cars, product blueprints in VR and import Revit, SketchUp, Rhino and OBJ files and work on top of them. Our advanced software enables you to build anything in your endless virtual environment, where your creativity is untethered from the limits of reality. CraftVR empowers you to share, and work upon your imagination and creativity with others easily and quickly using our collaboration functionality.
-
-Our desktop software runs on Steam and is supported on leading VR headsets as the Oculus Rift and HTC Vive.</p>
+    <div class = "intro" id="startchange">
+      <div class = "container">
+        <h1>INTRODUCING CRAFTVR</h1>
+        <hr>
+        <p>CraftVR is your one stop shop for prototyping, creating, visualizing and designing anything 3D in Virtual Reality.</p>
+        <p>CraftVR allows you to craft your own virtual reality experiences. Our desktop software is built from the ground up to create and view 3D structures using our premium tool kit inside Virtual Reality. Design and view buildings, houses, cars, product blueprints in VR and import Revit, SketchUp, Rhino and OBJ files and work on top of them. Our advanced software enables you to build anything in your endless virtual environment, where your creativity is untethered from the limits of reality. CraftVR empowers you to share, and work upon your imagination and creativity with others easily and quickly using our collaboration functionality.</p>
+        <p>Our desktop software runs on Steam and is supported on leading VR headsets as the Oculus Rift and HTC Vive.</p>
+      </div>
+    </div>
+    <div class="demo">
+      <div class = "container">
+        <h1>DEMO</h1>
+        <hr style="color: #ffcc66;">
+        <p >Take a tour of our Virtual Reality Room and interact with the objects. Compatible with Google Cardboard.</p>
+        <a href="https://tsrsm.github.io/CraftVR/demo.html" target="_blank" class="Button">VIEW DEMO</a>
+      </div>
+    </div>
+    <div class = "features">
+      <div class = "container">
+        <h1>DESIGNED VR-FIRST</h1>
+        <hr style="color: white;">
+        <p>CraftVR prioritizes comfort. We deliver intuitive tools, simple navigation, and fully immersive experiences.</p>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-pen.png">
+          <h1>Annotations</h1>
+          <p>You will be able to draw in space by moving your hands, allowing effective markups in your model.</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-timer.png">
+          <h1>Instant Conversion</h1>
+          <p>Your 3D files will be converted into a VR experience in less time than it takes to say "CraftVR"</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-scale.png">
+          <h1>Scale Model Mode</h1>
+          <p>Upon activation, the ability to begin a walkthrough, scale and rotate your model are unlocked.</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-controls.png">
+          <h1>Game Pad Support</h1>
+          <p> Use an Xbox controller, gamepad controller, or mouse and keyboard to navigate the scene.</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-height.png">
+          <h1>Accurate Height and Scale</h1>
+          <p>An accurate, true to scale experience that allows the user to fully understand a space.</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-sun.png">
+          <h1>Sun Position</h1>
+          <p>Experience lighting and shadows throughout the day in real time or change the lighting as you wish to see your product in different lighting conditions</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-layer.png">
+          <h1>Layers</h1>
+          <p>Toggle between different design options by choosing to view different layers of your design</p>
+        </div>
+        <div class = "col-md-3">
+          <img src="http://arjunsawhney.io/feature-teleport.png">
+          <h1>Easy Navigation</h1>
+          <p> CraftVR uses a cursor to explore your VR environment. Use it to move around to different places in the model.</p>
         </div>
       </div>
-      <div class="demo">
-        <div class = "container">
-          <h1>DEMO</h1>
-          <p >Take a tour of our Virtual Reality Room and interact with the objects. Compatible with Google Cardboard.</p>
-          <div  style="margin-top:30px;"><a href="#" target="_blank" class="Button">LEARN MORE</a></div>
-        </div>
+    </div>
+    <div class = "headsets">
+      <div class = "container">
+        <h1>CRAFTVR WORKS WITH LEADING VR HEADSETS</h1>
+        <hr style="color: #333333;">
+        <p>Our technology automatically detects your VR devices and creates an optimal experience instantly.</p>
+        <img src="http://arjunsawhney.io/ViveRift.jpg">
+        <a href="#" target="_blank" class="Button">LEARN MORE</a>
       </div>
-
-      <div class = "features">
-        <div class = "container">
-          <h1>DESIGNED VR-FIRST</h1>
-          <hr style="color: white;">
-          <p>CraftVR prioritizes comfort. We deliver intuitive tools, simple navigation, and fully immersive experiences.</p>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-pen.png">
-            <h1>Annotations</h1>
-            <p>With the HTC Vive or Oculus Touch enabled, you will be able to draw in space by moving your hands, allowing effective markups in your model.</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-timer.png">
-            <h1>Instant Conversion</h1>
-            <p>Your 3D files will be converted into a VR experience in less time than it takes to say "CraftVR"</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-scale.png">
-            <h1>Scale Model Mode</h1>
-            <p> The ability to begin a walkthrough, scale and rotate your model.</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-controls.png">
-            <h1>Game Pad Support</h1>
-            <p> Use an Xbox controller, gamepad controller, or mouse and keyboard to navigate the scene. The thumb sticks allow forwards movement and turning while the buttons enable the menu</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-height.png">
-            <h1>Accurate Height and Scale</h1>
-            <p>An accurate, true to scale experience that allows the user to fully understand a space.</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-sun.png">
-            <h1>Sun Position</h1>
-            <p>Experience lighting and shadows throughout the day in real time or change the lighting as you wish to see your product in different lighting conditions</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-layer.png">
-            <h1>Layers</h1>
-            <p>Toggle between different design options by choosing to view different layers of your design</p>
-          </div>
-          <div class = "col-md-3">
-            <img src="http://arjunsawhney.io/feature-teleport.png">
-            <h1>Easy Navigation</h1>
-            <p> CraftVR uses a cursor to explore your VR environment. Use it to move around to different places in the model.</p>
-          </div>
-        </div>
-      </div>
-      <div class = "headsets">
-        <div class = "container">
-          <h1>CRAFTVR WORKS WITH LEADING VR HEADSETS</h1>
-          <hr style="color: #333333;">
-          <p>Our technology automatically detects your VR devices and creates an optimal experience instantly.</p>
-          <img src="http://arjunsawhney.io/ViveRift.jpg">
-          <a href="#" target="_blank" class="Button">LEARN MORE</a>
-        </div>
-      </div>
-      <div class = "footer">
-        <div class = "container">
-          <div class = "social">
-            <div class = "container">
-              <div class = "col-md-3">
-                <a href="#" target="_blank"><img src="http://arjunsawhney.io/facebook.png"></a>
-              </div>
-              <div class = "col-md-3">
-                <a href="#" target="_blank"><img src="http://arjunsawhney.io/instagram.png"></a>
-              </div>
-              <div class = "col-md-3">
-                <a href="#" target="_blank"><img src="http://arjunsawhney.io/twitter.png"></a>
-              </div>
-              <div class = "col-md-3">
-                <a href="#" target="_blank"><img src="http://arjunsawhney.io/youtube.png"></a>
-              </div>
+    </div>
+    <div class = "footer">
+      <div class = "container">
+        <div class = "social">
+          <div class = "container">
+            <div class = "col-md-3">
+              <a href="#" target="_blank"><img src="http://arjunsawhney.io/facebook.png"></a>
             </div>
-          </div>
-          <div class = "links">
-            <div class = "container">
-              <h1>LINKS</h1>
-              <a href="http://arjunsawhney.io/craftvr.html">Home</a><br>
-              <a href="http://arjunsawhney.io/craftvr.html">About Us</a><br>
-              <a href="http://arjunsawhney.io/craftvr.html">Services</a>
+            <div class = "col-md-3">
+              <a href="#" target="_blank"><img src="http://arjunsawhney.io/instagram.png"></a>
             </div>
-          </div>
-          <div class = "contact">
-            <div class = "container">
-              <h1>CONTACT US</h1>
-              <p>(012) 1234 7824</p>
-              <p>hello@craftvr.com</p>
+            <div class = "col-md-3">
+              <a href="#" target="_blank"><img src="http://arjunsawhney.io/twitter.png"></a>
+            </div>
+            <div class = "col-md-3">
+              <a href="#" target="_blank"><img src="http://arjunsawhney.io/youtube.png"></a>
             </div>
           </div>
         </div>
-      </div>
-      <div class = "copyright">
-        <div class = "container">
-          <p>Copyright &#169 2016 CraftVR. All Rights Reserved.</p>
+        <div class = "links">
+          <div class = "container">
+            <h1>LINKS</h1>
+            <a href="http://arjunsawhney.io/craftvr.html">Home</a><br>
+            <a href="http://arjunsawhney.io/craftvr.html">About Us</a><br>
+            <a href="http://arjunsawhney.io/craftvr.html">Services</a>
+          </div>
+        </div>
+        <div class = "contact">
+          <div class = "container">
+            <h1>CONTACT US</h1>
+            <p>(012) 1234 7824</p>
+            <p>hello@craftvr.com</p>
+          </div>
         </div>
       </div>
-      <script src="js1/classie.js"></script>
+    </div>
+    <div class = "copyright">
+      <div class = "container">
+        <p>Copyright &#169 2016 CraftVR. All Rights Reserved.</p>
+      </div>
+    </div>
+    <script src="js1/classie.js"></script>
     <script src="js1/phoneSlideshow.js"></script>
     <script type="text/javascript">
-          $(document).ready(function(){
-   var scroll_start = 0;
-   var startchange = $('#startchange');
-   var offset = startchange.offset();
-    if (startchange.length){
-   $(document).scroll(function() {
-      scroll_start = $(this).scrollTop();
-      if(scroll_start > offset.top) {
-          $(".nav").css('display', 'block')
-       } else {
-          $('.nav').css('display', 'none');
-       }
-   });
+    $(document).ready(function(){
+      var scroll_start = 0;
+      var startchange = $('#startchange');
+      var offset = startchange.offset();
+      if (startchange.length){
+        $(document).scroll(function() {
+          scroll_start = $(this).scrollTop();
+          if(scroll_start > offset.top) {
+            $(".nav").css('display', 'block')
+          } else {
+            $('.nav').css('display', 'none');
+          }
+        });
+      }
+    });
+    </script>
+    <script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
     }
-});
 
-</script>
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+    <script>
+    $( ".wrapper a" ).click(function() {
+      $( ".wrapper a" ).hide();
+      $( ".image" ).hide();
+    });
 
-  <script>
-function openNav() {
-    document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-}
-</script>
-    </body>
-    </html>
+    $( ".overlay .closebtn" ).click(function() {
+      $( ".wrapper a" ).show(500);
+      $( ".image" ).show(500);
+    });
+    </script>
+  </body>
+  </html>
