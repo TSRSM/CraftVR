@@ -39,7 +39,7 @@
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
-      <iframe src="video.mp4" muted frameborder="0" allowfullscreen></iframe>
+      <video controls="" name="media"><source src="video.mp4" type="video/mp4"></video>
     </div>
   </div>
   <div class="nav">
@@ -210,7 +210,6 @@
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
     }
-
     function closeNav() {
       document.getElementById("myNav").style.height = "0%";
     }
@@ -220,7 +219,6 @@
       $( ".wrapper a" ).hide();
       $( ".image" ).hide();
     });
-
     $( ".overlay .closebtn" ).click(function() {
       $( ".wrapper a" ).show(500);
       $( ".image" ).show(500);
