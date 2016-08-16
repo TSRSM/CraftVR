@@ -33,13 +33,31 @@
       transform: skewY(-45deg) translateX(12.5em);
     }
   }
+
+  @media (min-width: 741px) {
+    video.playVid {
+     height: 70vh;
+     margin-top: 10vh;
+    }
+  }
+
+ @media (max-width: 740px) {
+  video.playVid {
+    width: 70vw;
+    margin-left: 10vh;
+  }
+}
+
+
   </style>
 </head>
 <body>
   <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="
+    z-index: 100000;
+">&times;</a>
     <div class="overlay-content">
-      <video controls="" name="media"><source src="video.mp4" type="video/mp4"></video>
+      <video class="playVid" controls="" name="media" style="height: 70vh; margin-top:10vh"><source src="video.mp4" type="video/mp4"></video>
     </div>
   </div>
   <div class="nav">
@@ -67,9 +85,9 @@
       </div>
     </div>
     <div class="headmob" style="display: none;">
-      <center><img src="logo.png" class="" style="float:center"width="300px" height = "auto"></center>
+      <center><img src="logo.png" class="" style="float:center;width:300px" height="auto"></center>
       <div class="wrapper" style="padding-top:100px">
-        <a href="#" class="Button1"  class="icocenter img-responsive" onclick="openNav()">Video</a>
+        <a href="#" class="Button1" class="icocenter img-responsive" onclick="openNav()">Video</a>
       </div>
       <div class="fullscreen-bg">
       </div>
@@ -218,10 +236,13 @@
     $( ".wrapper a" ).click(function() {
       $( ".wrapper a" ).hide();
       $( ".image" ).hide();
+      $( "body" )[0].style.overflowY = "hidden";
     });
     $( ".overlay .closebtn" ).click(function() {
       $( ".wrapper a" ).show(500);
       $( ".image" ).show(500);
+            $( "body" )[0].style.overflowY = "auto";
+
     });
     </script>
   </body>
